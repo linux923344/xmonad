@@ -1,0 +1,6 @@
+
+xmobar.hs:9:66: error:
+    lexical error in string/character literal at character '\61573'
+  |
+9 |        , commands = [ Run Cpu [ "--template", "<fc=#a9a1e1><fn=1></fn></fc> <total>%"
+  |                                                                  ^

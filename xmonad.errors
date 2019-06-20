@@ -1,0 +1,22 @@
+
+xmonad.hs:92:31: warning: [-Wtabs]
+    Tab character found here, and in two further locations.
+    Please use spaces instead.
+   |
+92 |     , className =? "keepassxc"                    --> doShift "7"
+   |                               ^^
+
+xmonad.hs:111:43: warning: [-Wdeprecations]
+    In the use of ‘spacing’ (imported from XMonad.Layout.Spacing):
+    Deprecated: "Use spacingRaw instead."
+    |
+111 | addSpace     = renamed [CutWordsLeft 2] . spacing gap
+    |                                           ^^^^^^^
+
+xmonad.hs:500:12: warning: [-Wdeprecations]
+    In the use of ‘defaultConfig’
+    (imported from XMonad, but defined in XMonad.Config):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+    |
+500 | defaults = defaultConfig {
+    |            ^^^^^^^^^^^^^
