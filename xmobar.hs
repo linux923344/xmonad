@@ -1,11 +1,11 @@
 Config {
        font = "xft:monospace:size=15"
        , additionalFonts = [ "xft:FontAwesome5FreeSolid:size=15" ]
-       , allDesktops = True
        , bgColor = "#282c34"
        , fgColor = "#bbc2cf"
-       --, position = TopW L 
-       ,position = Static { xpos = 0, ypos = 0, width = 1810, height = 20 }
+       , position = TopW L 93 
+       , pickBroadest = False
+       -- , position = Static { xpos = 0, ypos = 0, width = 1810, height = 20 }
        , commands = [ Run Cpu [ "--template", "<fc=#a9a1e1><fn=1></fn></fc> <total>%"
                               , "--Low","3"
                               , "--High","50"
@@ -52,5 +52,5 @@ Config {
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %coretemp% | %cpu% | %memory% | %battery% | %weather% | %volume% | %date% |"   -- #69DFFA
+       , template = "%StdinReader% }{ %coretemp% | %cpu% | %memory% | %battery% | %weather% | %volume% | %date%  |"   -- #69DFFA
        }

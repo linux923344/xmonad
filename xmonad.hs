@@ -89,7 +89,7 @@ myManageHook = composeAll
     , className =? "Lutris"                       --> doShift "4"
     , className =? "League"                       --> doShift "4"
     , className =? "TeamSpeak 3"                  --> doShift "4"
-    , className =? "keepassxc"			  --> doShift "7"
+    , className =? "keepassxc"                    --> doShift "7"
     , className =? "Kodi"                         --> doShift "8"
     , className =? "TeamViewer"                   --> doShift "9"
     ]
@@ -111,14 +111,14 @@ myGaps       = gaps [(U, outerGaps), (R, outerGaps), (L, outerGaps), (D, outerGa
 addSpace     = renamed [CutWordsLeft 2] . spacing gap
 tab          =  avoidStruts
                $ renamed [Replace "Tabbed"]
-               $ addTopBar
+             --  $ addTopBar
                $ myGaps
                $ tabbed shrinkText myTabTheme
 
 layouts      = avoidStruts (
                 (
                     renamed [CutWordsLeft 1]
-                  $ addTopBar
+               --   $ addTopBar
                   $ windowNavigation
                   $ renamed [Replace "BSP"]
                   $ addTabs shrinkText myTabTheme
@@ -216,7 +216,7 @@ topBarTheme = def
     , decoHeight            = topbar
     }
 
-addTopBar =  noFrillsDeco shrinkText topBarTheme
+-- addTopBar =  noFrillsDeco shrinkText topBarTheme
 
 myTabTheme = def
     { fontName              = myFont
@@ -271,7 +271,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "cmdlock")
 
   -- Shutdown Laptop.
-  , ((modMask .|. shiftMask, xK_e),
+  , ((modMask .|. shiftMask, xK_F1),
      spawn "shut-sup-rest")
 
   -- Volume Control.
@@ -350,11 +350,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      windows W.focusDown)
 
   -- Move focus to the next window.
-  , ((modMask, xK_j),
+  , ((modMask, xK_Left),
      windows W.focusDown)
 
   -- Move focus to the previous window.
-  , ((modMask, xK_k),
+  , ((modMask, xK_Right),
      windows W.focusUp  )
 
   -- Move focus to the master window.
@@ -374,11 +374,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      windows W.swapUp    )
 
   -- Shrink the master area.
-  , ((modMask, xK_h),
+  , ((modMask .|. shiftMask, xK_Left),
      sendMessage Shrink)
 
   -- Expand the master area.
-  , ((modMask, xK_l),
+  , ((modMask .|. shiftMask, xK_Right),
      sendMessage Expand)
 
   -- Push window back into tiling.
@@ -392,6 +392,19 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Decrement the number of windows in the master area.
   , ((modMask, xK_period),
      sendMessage (IncMasterN (-1)))
+
+  -- Cmus Play
+   , ((0, 0x1008ff14),
+      spawn "cmus-remote -u")
+   
+  -- Cmus Next
+   , ((0, 0x1008ff17),
+      spawn "cmus-remote -n")  
+
+  -- Cmus Prev
+   , ((0, 0x1008ff16),
+      spawn "cmus-remote -r")        
+
 
   -- Toggle the status bar gap.
   -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
@@ -475,6 +488,7 @@ myStartupHook = do
 --
 
 main = do
+  spawn "xrandr --output HDMI-1-1 --left-of eDP-1-1"
   xmproc <- spawnPipe ("xmobar " ++ myXmobarrc)
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {

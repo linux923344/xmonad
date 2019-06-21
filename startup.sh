@@ -5,7 +5,6 @@ xset s off -dpms&
 xset b off&
 xset s off&
 xset -dpms&
-trayer --edge top --align right --SetDockType true --expand true --width 7 --transparent true --alpha 0 --tint 0x282c34 --height 20 &
 redshift -l 52.2327:18.3036 -t 6500:3200&
 nm-applet --sm-disable&
 /usr/local/bin/st -e "tmux-my"&
@@ -20,3 +19,4 @@ transmission-daemon&
 teamviewer&
 getforecast&
 pl&
+trayer --edge top --align right --SetDockType true --expand true --SetPartialStrut true --width 6 --transparent true --alpha 0 --widthtype request --tint 0x282c34 --height 23 &
