@@ -1,6 +1,7 @@
 #!/bin/bash
 echo AUTOSTART
-feh --bg-fill $HOME/.wall.jpg &
+#feh --bg-fill $HOME/.wall.jpg &
+feh --bg-tile $HOME/.wall.jpg&
 xset s off -dpms&
 xset b off&
 xset s off&
@@ -9,6 +10,7 @@ redshift -l 52.2327:18.3036 -t 6500:3200&
 nm-applet --sm-disable&
 /usr/local/bin/st -e "tmux-my"&
 "/mnt/mega/Systems/Gentoo/apps/KeePass.AppImage"&
+#"/mnt/mega/Systems/Gentoo/apps/todoist/todoist"&
 megasync&
 firefox-bin&
 thunderbird-bin&

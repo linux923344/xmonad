@@ -1,15 +1,15 @@
 
-xmonad.hs:111:43: warning: [-Wdeprecations]
+xmonad.hs:60:43: warning: [-Wdeprecations]
     In the use of ‘spacing’ (imported from XMonad.Layout.Spacing):
     Deprecated: "Use spacingRaw instead."
-    |
-111 | addSpace     = renamed [CutWordsLeft 2] . spacing gap
-    |                                           ^^^^^^^
+   |
+60 | addSpace     = renamed [CutWordsLeft 2] . spacing gap
+   |                                           ^^^^^^^
 
-xmonad.hs:514:12: warning: [-Wdeprecations]
+xmonad.hs:282:12: warning: [-Wdeprecations]
     In the use of ‘defaultConfig’
     (imported from XMonad, but defined in XMonad.Config):
     Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
     |
-514 | defaults = defaultConfig {
+282 | defaults = defaultConfig {
     |            ^^^^^^^^^^^^^

@@ -44,7 +44,7 @@ Config {
                                                    -- AC "on" status
                                                    , "-O"   , "<left>% (<fc=#98be65>Charging</fc>)" -- 50fa7b
                                                    -- charged status
-                                                   , "-i"   , "<fc=#98be65>Charged</fc>"
+                                                   , "-i"   , "<fc=#98be65>100%</fc>" --"<fc=#98be65>Charged</fc>"
                                          ] 50
                   , Run StdinReader
                   , Run Com "/bin/sh" ["/home/yorune/.xmonad/weather.sh"] "weather" 3600
